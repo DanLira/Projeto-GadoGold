@@ -1,0 +1,76 @@
+<div class="container">
+  <section >
+     <img class="article-img" src="/espetinhos.png" />
+    
+   <!-- <article>
+      <h2 class="title">Cardápio de Espetinhos</h2>
+      <table class="nutrition-table">
+        <tr>
+          <td class="first-col content">Frago c/ queijo 5 unidades </td>
+          <td class="value">R$31,99</td>
+        </tr>
+        <tr>
+          <td class="first-col content">Frango c/ Bacon.
+            5 unidades</td>
+          <td class="value">R$26,99</td>
+        </tr>
+        <tr>
+          <td class="first-col content">Protein</td>
+          <td class="value">20g</td>
+        </tr>
+        <tr>
+          <td class="last-line first-col content">Fat</td>
+          <td class="last-line value">22g</td>
+        </tr>
+      </table>
+    </article>  -->
+
+
+    
+    <h2 class="title">Cardápio de Espetinhos</h2>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      
+        <ng-container matColumnDef="espetinho">
+          <th mat-header-cell *matHeaderCellDef> Espetinho </th>
+          <td mat-cell *matCellDef="let element"> {{element.espetinho}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="unidades">
+          <th mat-header-cell *matHeaderCellDef> Unidade </th>
+          <td mat-cell *matCellDef="let element"> {{element.unidade}} </td>
+        </ng-container>
+      
+       
+        <ng-container matColumnDef="valor">
+          <th mat-header-cell *matHeaderCellDef> Valor </th>
+          <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+    
+  </section>
+
+  <section>
+    <div class="form">
+      <h1>TESTE</h1>
+    <form [formGroup]="formsRegister" class="row">
+      <label for="first-name">Informe seu Nome: </label>
+      <input id="first-name" type="text" formControlName="nomeCliente">
+      
+  
+      
+  
+    </form>
+
+    </div>
+    
+  </section>
+</div>
+
+
+
